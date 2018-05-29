@@ -1,7 +1,14 @@
 <template>
  <section class="section">
- <div class="content">
-      This is a test.
- </div>
+ 
  </section>
 </template>
+<script>
+   export default {
+     asyncData({params}) {
+       return {
+           dogname: params.dog
+       }
+     }
+     };
+</script>
