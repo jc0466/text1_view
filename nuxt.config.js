@@ -32,6 +32,7 @@ module.exports = {
      ** Build configuration 
      */ 
      build: { 
+       vender: 'axios',
        /* 
        ** Run ESLint on save 
        */ 
