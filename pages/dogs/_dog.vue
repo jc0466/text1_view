@@ -18,6 +18,20 @@
 
             </div>
         </article>
+        <article class="message is-danger">
+            <div class="message-header">
+                <p>{{dogname.toUpperCase()}}의 아품종</p>
+            </div>
+            <div class="message-body">
+                <ol>
+                    <li v-for="subdog in dogList" :key="subdog">
+                        {{subdog.toUpperCase()}}
+                    </li>  
+                </ol>
+                        
+            </div>
+
+        </article>
     </section>
 </template>
 <script>
@@ -30,9 +44,11 @@
                 const image = await axios.get(`https://dog.ceo/api/breed/${params.dog}/images/random`);
                 images.push(image.data.message);
             }
+            const list = axios.get('https:dog.ceo/api/breed/${params.dog}/list');
             return {
                 dogName: params.dog,
-                images: images
+                images: images,
+                dogList : list.data.message
             };
         }
     };
