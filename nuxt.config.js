@@ -1,12 +1,12 @@
 module.exports = { 
-    /* 
+     /* 
      ** Headers of the page 
      */ 
      head: { 
        title: "개사랑", 
        meta: [ 
          { charset: "utf-8" }, 
-        { name: "viewport", content: "width=device-width, initial-scale=1" }, 
+         { name: "viewport", content: "width=device-width, initial-scale=1" }, 
          { 
            hid: "description", 
            name: "description", 
@@ -17,9 +17,9 @@ module.exports = {
          { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }, 
          { 
            rel: "stylesheet", 
-          href: 
-         "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" 
-       }, 
+         href: 
+             "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" 
+         }, 
          { 
            rel: "stylesheet", 
            href: "https://uicdn.toast.com/tui.chart/latest/tui-chart.css" 
@@ -35,7 +35,7 @@ module.exports = {
              "https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js" 
          }, 
          { 
-          src: "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.js" 
+           src: "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.js" 
          }, 
          { src: "https://uicdn.toast.com/tui.chart/latest/tui-chart.js" } 
        ] 
@@ -45,7 +45,7 @@ module.exports = {
      */ 
      loading: { color: "#3B8070" }, 
      /* 
-    ** Build configuration 
+     ** Build configuration 
      */ 
      build: { 
        vendor: ["axios"], 
@@ -53,7 +53,7 @@ module.exports = {
        ** Run ESLint on save 
        */ 
        extend(config, { isDev, isClient }) { 
-        if (isDev && isClient) { 
+         if (isDev && isClient) { 
            config.module.rules.push({ 
              enforce: "pre", 
              test: /\.(js|vue)$/, 
@@ -62,6 +62,7 @@ module.exports = {
            }); 
          } 
        } 
-     } 
+     }, 
+     plugins: [{ src: "~/plugins/myBarChart", ssr: false }] 
    }; 
   
