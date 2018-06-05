@@ -63,6 +63,6 @@ module.exports = {
          } 
        } 
      }, 
-     plugins: [{ src: "~/plugins/myBarChart", ssr: false }] 
+     
    }; 
   
